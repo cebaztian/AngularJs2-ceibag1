@@ -1,3 +1,7 @@
+<div *ngIf="selectedPatient">
+    <patient-detail [patient] = "selectedPatient"></patient-detail>
+</div>
+
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
@@ -15,10 +19,10 @@
                 <td>{{patient.name}} {{patient.lastName}}</td>
                 <td>{{patient.priority}}</td>
                 <td>{{patient.address}}</td>
-                <!--<td>
+                <td>
                     <button type="button" class="btn btn-info" (click)="onSelect(patient)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
                     <button type="button" class="btn btn-danger" [disabled]="selectedPatient && selectedPatient.id === patient.id" (click)="delete(patient.id)"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-                </td>-->
+                </td>
             </tr>
         </tbody>
     </table>
